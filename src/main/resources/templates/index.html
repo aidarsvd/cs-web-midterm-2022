@@ -16,7 +16,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
             <img src="../static/img/logo.jpeg" th:src="@{img/logo.jpeg}" width="60" height="60" class="d-inline-block align-text-center">
-            Ala-Too Students
+            Ala-Too Departments
         </a>
     </div>
 </nav>
@@ -36,9 +36,14 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
+        <tr th:each="item : ${department_list}">
+            <th scope="row" th:text="${item.id}">1</th>
+            <td th:text="${item.name}">Computer science</td>
+            <td>
+                <form>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>

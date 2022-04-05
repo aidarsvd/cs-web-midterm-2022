@@ -4,12 +4,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pro.aidar.alatoo.entity.Department;
 import pro.aidar.alatoo.service.DepartmentService;
 
 @Controller
+@RequestMapping("/department")
 @Slf4j
 @RequiredArgsConstructor
 public class MainController {
@@ -23,10 +23,16 @@ public class MainController {
         return "index";
     }
 
-    @PostMapping("/department")
-    public Department addDepartment(Department department) {
-        return departmentService.addDepartment(department);
+    @PostMapping
+    public String addDepartment(Department department) {
+        departmentService.addDepartment(department);
+        return "redirect:/department";
     }
 
+    @DeleteMapping("/{id}")
+    String deleteDepartment(@PathVariable Long id){
+        departmentService.deleteById(id);
+        return "redirect:/department";
+    }
 
 }

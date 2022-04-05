@@ -16,13 +16,18 @@ public class DepartmentServiceImpl implements DepartmentService{
     private final DepartmentRepository departmentRepository;
 
     @Override
-    public Department addDepartment(Department department) {
-        return departmentRepository.save(department);
+    public void addDepartment(Department department) {
+        departmentRepository.save(department);
     }
 
     @Override
     public List<Department> findAll() {
         return departmentRepository.findAll();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        departmentRepository.deleteById(id);
     }
 
 

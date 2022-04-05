@@ -28,8 +28,8 @@ public class Department {
     })
     @JoinTable(
             name = "department_classes",
-            joinColumns = { @JoinColumn(name = "department_id") },
-            inverseJoinColumns = { @JoinColumn(name = "class_id") }
+            joinColumns = {@JoinColumn(name = "department_id")},
+            inverseJoinColumns = {@JoinColumn(name = "class_id")}
     )
     private List<Class> classes;
 

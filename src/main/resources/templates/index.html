@@ -23,10 +23,12 @@
 
 <div class="container">
 
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Add department" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-    </div>
+    <form method="post" th:action="@{/department/}" th:object="${department}">
+        <div class="input-group mb-3">
+            <input type="text" th:field="*{name}" class="form-control" placeholder="Add department" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+        </div>
+    </form>
 
     <table class="table table-hover">
         <thead>
@@ -40,8 +42,8 @@
             <th scope="row" th:text="${item.id}">1</th>
             <td th:text="${item.name}">Computer science</td>
             <td>
-                <form>
-                    <button type="button" class="btn btn-danger">Delete</button>
+                <form th:action="@{/department/{id}(id = ${item.id})}" th:method="delete">
+                    <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </td>
         </tr>

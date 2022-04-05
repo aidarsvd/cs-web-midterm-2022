@@ -20,8 +20,17 @@ public class Department {
 
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "department_id")
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.REFRESH,
+            CascadeType.PERSIST
+    })
+    @JoinTable(
+            name = "department_classes",
+            joinColumns = { @JoinColumn(name = "department_id") },
+            inverseJoinColumns = { @JoinColumn(name = "class_id") }
+    )
     private List<Class> classes;
 
 }

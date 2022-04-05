@@ -10,7 +10,6 @@ import pro.aidar.alatoo.service.DepartmentService;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/main")
 public class MainController {
 
     private final DepartmentService departmentService;

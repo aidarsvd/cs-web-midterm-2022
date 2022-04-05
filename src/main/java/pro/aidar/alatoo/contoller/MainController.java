@@ -5,11 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pro.aidar.alatoo.entity.Department;
 import pro.aidar.alatoo.service.DepartmentService;
 
 @Controller
-@RequestMapping("/department")
 @Slf4j
 @RequiredArgsConstructor
 public class MainController {
@@ -18,21 +16,8 @@ public class MainController {
 
     @GetMapping
     public String getMain(Model model) {
-        model.addAttribute("department", new Department());
         model.addAttribute("department_list", departmentService.findAll());
         return "index";
-    }
-
-    @PostMapping
-    public String addDepartment(Department department) {
-        departmentService.addDepartment(department);
-        return "redirect:/department";
-    }
-
-    @DeleteMapping("/{id}")
-    String deleteDepartment(@PathVariable Long id){
-        departmentService.deleteById(id);
-        return "redirect:/department";
     }
 
 }

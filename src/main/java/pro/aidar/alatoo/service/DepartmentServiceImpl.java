@@ -7,6 +7,7 @@ import pro.aidar.alatoo.repository.DepartmentRepository;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -16,19 +17,13 @@ public class DepartmentServiceImpl implements DepartmentService{
     private final DepartmentRepository departmentRepository;
 
     @Override
-    public void addDepartment(Department department) {
-        departmentRepository.save(department);
-    }
-
-    @Override
     public List<Department> findAll() {
         return departmentRepository.findAll();
     }
 
     @Override
-    public void deleteById(Long id) {
-        departmentRepository.deleteById(id);
+    public Optional<Department> findById(Long id) {
+        return departmentRepository.findById(id);
     }
-
 
 }

@@ -3,7 +3,7 @@ A web application that displays information about the department and its subject
 ## Web app url: https://alatooclasses.herokuapp.com/
 
 ## Entity relationship diagram:
-![erd](https://user-images.githubusercontent.com/50268957/162252720-d0388f0f-ce73-4cf0-b93d-d3ad69094cf2.jpeg)
+![Blank diagram](https://user-images.githubusercontent.com/50268957/162257426-443ba43b-e5dd-46d0-b05a-99f8d7f1b1cd.png)
 
 ## Screenshots:
 <img width="1440" alt="Screen Shot 2022-04-07 at 22 33 21" src="https://user-images.githubusercontent.com/50268957/162253108-49da55ea-a9a3-4070-89ee-f8dcbefb7a08.png">

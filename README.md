@@ -1,4 +1,4 @@
-# cs-web-midterm-2022
+A web application that displays information about the department and its subjects with a teacher from database.
 
 ## Web app url: https://alatooclasses.herokuapp.com/
 
